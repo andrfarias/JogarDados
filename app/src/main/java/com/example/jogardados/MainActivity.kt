@@ -3,6 +3,7 @@ package com.example.jogardados
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 
@@ -18,8 +19,15 @@ class MainActivity : AppCompatActivity()
 
     private fun tentarSorte() {
         val dado = Dado(6)
-        val resultTextView : TextView = findViewById(R.id.textView)
-        resultTextView.text = dado.Jogar().toString()
+        val fotoDado : ImageView = findViewById(R.id.imageView)
+        when(dado.Jogar()){
+            1 -> fotoDado.setImageResource(R.drawable.dice_1)
+            2 -> fotoDado.setImageResource(R.drawable.dice_2)
+            3 -> fotoDado.setImageResource(R.drawable.dice_3)
+            4 -> fotoDado.setImageResource(R.drawable.dice_4)
+            5 -> fotoDado.setImageResource(R.drawable.dice_5)
+            6 -> fotoDado.setImageResource(R.drawable.dice_6)
+        }
     }
 }
 
